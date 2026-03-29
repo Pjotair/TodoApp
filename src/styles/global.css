@@ -1,5 +1,14 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: aliceblue;
+    background-color: #cdd6de;
     margin: 0;
+}
+
+.container {
+    margin: 50px auto;
+    background: white;
+}
+
+h1 {
+    text-align: center;
 }

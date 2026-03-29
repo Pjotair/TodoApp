@@ -1,7 +1,8 @@
 import { useState } from "react";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 function TodoApp() {
-  const [tasks, setTasks] = useState([]); // lista zadań
+  const [tasks, setTasks] = useLocalStorage("tasks", []);
   const [input, setInput] = useState("");
 
   const addTask = () => {
@@ -18,7 +19,7 @@ function TodoApp() {
   };
 
   const deleteTask = (index) => {
-    setTasks(tasks.filter((_, i) => i !== index)); // filtruje po indeksie i usuwa element z listy
+    setTasks(tasks.filter((_, i) => i !== index));
   };
 
   return (
@@ -33,17 +34,12 @@ function TodoApp() {
         <button onClick={addTask}>Dodaj</button>
       </div>
       <ul className="task-list">
-        {tasks.map(
-          (
-            task,
-            index, // to będzie generować dynamicznie listę HTML
-          ) => (
-            <li key={index} className={task.done ? "done" : ""}>
-              <span onClick={() => toggleTask(index)}>{task.text}</span>
-              <button onClick={() => deleteTask(index)}>❌</button>
-            </li>
-          ),
-        )}
+        {tasks.map((task, index) => (
+          <li key={index} className={task.done ? "done" : ""}>
+            <span onClick={() => toggleTask(index)}>{task.text}</span>
+            <button onClick={() => deleteTask(index)}>❌</button>
+          </li>
+        ))}
       </ul>
     </div>
   );

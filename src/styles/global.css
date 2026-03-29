@@ -1,14 +1,54 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #cdd6de;
+    background-color: #bed2c7;
     margin: 0;
 }
 
 .container {
     margin: 50px auto;
     background: white;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 10px;
 }
 
 h1 {
     text-align: center;
+}
+
+button {
+    padding: 10px;
+    cursor: pointer;
+}
+
+input {
+    padding: 10px;
+    flex: 1;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.task-list {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.task-list li {
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid #dddddd;
+    justify-content: space-between;
+}
+
+.task-list li:hover {
+    background-color: #a8ceb9;
+}
+
+.task-list li.done span {
+    text-decoration: line-through;
+    color: green;
 }

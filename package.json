@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Pjotair.github.io/todoapp",
+  "homepage": "https://Pjotair.github.io/TodoApp/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
